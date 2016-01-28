@@ -1,0 +1,6 @@
+
+Vim on cygwin
+Display line number
+1) $ cp /usr/share/vim/vim74/vimrc_example.vim ~/.vimrc;
+2) $ cd ~;
+3) $ vim .vimrc;

@@ -1,0 +1,11 @@
+VMware - Shared folder
+
+1) VM->Install VMware Tools:
+   sudo tar zxf VMwareTools-xxx.tar.gz;
+   cd /vmware-tools-distrib;
+   sudo ./vmware-install.pl => key "Enter" until the end;
+2) Power off => VM->Settings->Options->Shared Folders => Always enabled;
+3) Terminal:
+   sudo apt-get install open-vm-dkms;
+   sudo mount -t vmhgfs .host:/ /mnt/hgfs;
+   cd /mnt/hgfs;
