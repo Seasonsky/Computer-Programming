@@ -4,3 +4,15 @@ Display line number
 1) $ cp /usr/share/vim/vim74/vimrc_example.vim ~/.vimrc;
 2) $ cd ~;
 3) $ vim .vimrc;
+
+In OSX, edit the vim config file located at:
+
+/usr/share/vim/vimrc
+Add the following at the end of the file:
+
+" Custom Config Options
+set number
+That's it. For Ubuntu 10.10 (Maverick Meerkat), the file is located at:
+
+/etc/vim/vimrc
+Same deal there. Hope that saves someone some time.

@@ -1,0 +1,39 @@
+// err on Inheritance
+
+class Person {
+ private:
+  int ID;
+  int age;
+  char sex;
+};
+
+class Student : public Person {
+ public:
+  void display() {
+    cout << "ID = " << ID;
+};
+
+int main() {
+
+  return 0;
+}
+
+##########################################
+inheritance.cpp:22:2: error: expected '}'
+}
+^
+inheritance.cpp:13:31: note: to match this '{'
+class Student : public Person {
+  ^
+  inheritance.cpp:16:24: error: 'ID' is a private member of 'Person'
+  cout << "ID = " << ID;
+  ^
+  inheritance.cpp:8:7: note: declared private here
+  int ID;
+  ^
+  inheritance.cpp:22:2: error: expected ';' after class
+  }
+  ^
+  ;
+  3 errors generated.
+############################################
