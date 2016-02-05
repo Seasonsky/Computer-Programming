@@ -1,0 +1,34 @@
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+int num_1 = 0;
+int num_2;
+
+class Person {
+ public:
+  int ID;
+  string name;
+};
+
+
+int main() {
+
+  Person person;
+  cout << "num_1= " << num_1 << endl;
+  cout << "num_2= " << num_2 << endl;
+  cout << "ID= " << person.ID << endl;
+  cout << "name= " << person.name << endl;
+  return 0;
+}
+
+/*##########################################
+
+pcp252433pcs:err Sky$ ./a.out 
+num= 
+ID= 1369549904
+name= 
+pcp252433pcs:err Sky$
+
+##########################################*/
