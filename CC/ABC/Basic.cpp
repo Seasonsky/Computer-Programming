@@ -339,21 +339,55 @@ switch (score) {
 }
 
 sky@ubuntu:~/rmst$ make
-g++ -std=c++11 -o rmst.o -I.  -c    rmst.cpp
+g++ -std = c++11 -o rmst.o -I.-c    rmst.cpp
 rmst.cpp: In function ‘std::ostream& operator<<(std::ostream&, const Edge&)’:
 rmst.cpp:43:10: error: the value of ‘i’ is not usable in a constant expression
-     case i: str = "LEFT"; break;
-          ^
-rmst.cpp:41:7: note: ‘int i’ is not const
-   int i = 5;
-       ^
-rmst.cpp:43:10: error: the value of ‘i’ is not usable in a constant expression
-     case i: str = "LEFT"; break;
-          ^
-rmst.cpp:41:7: note: ‘int i’ is not const
-   int i = 5;
-       ^
-Makefile:22: recipe for target 'rmst.o' failed
-make: *** [rmst.o] Error 1
+  case i:
+    str = "LEFT";
+    break;
+    ^
+    rmst.cpp:41:7: note: ‘int i’ is not const
+    int i = 5;
+    ^
+    rmst.cpp:43:10: error: the value of ‘i’ is not usable in a constant expression
+  case i:
+    str = "LEFT";
+    break;
+    ^
+    rmst.cpp:41:7: note: ‘int i’ is not const
+    int i = 5;
+    ^
+    Makefile:22: recipe for target 'rmst.o' failed
+    make: *** [rmst.o] Error 1
+
+/**********/
+
+    double division(int a, int b) {
+      if (b == 0) {
+        throw "Division by zero!";
+      }
+      return (a / b);
+    }
+
+    int main() {
+
+      int income = 50;
+      int month = 0;
+      double avg = 0;
+
+      try {
+        if (month < 0) throw month;
+        avg = division(income, month);
+        cout << avg << endl;
+      } catch (const char* msg) {
+        cerr << msg << endl;
+      } catch (int) {
+        cerr << "month should be >0 !" << endl;
+      } catch (...) {
+        cerr << "Something wrong with this function!" << endl;
+      }
+
+      return 0;
+    }
 
 /**********/
