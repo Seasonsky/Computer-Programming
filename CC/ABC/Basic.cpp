@@ -338,4 +338,22 @@ switch (score) {
     cout << "fair";
 }
 
+sky@ubuntu:~/rmst$ make
+g++ -std=c++11 -o rmst.o -I.  -c    rmst.cpp
+rmst.cpp: In function ‘std::ostream& operator<<(std::ostream&, const Edge&)’:
+rmst.cpp:43:10: error: the value of ‘i’ is not usable in a constant expression
+     case i: str = "LEFT"; break;
+          ^
+rmst.cpp:41:7: note: ‘int i’ is not const
+   int i = 5;
+       ^
+rmst.cpp:43:10: error: the value of ‘i’ is not usable in a constant expression
+     case i: str = "LEFT"; break;
+          ^
+rmst.cpp:41:7: note: ‘int i’ is not const
+   int i = 5;
+       ^
+Makefile:22: recipe for target 'rmst.o' failed
+make: *** [rmst.o] Error 1
+
 /**********/

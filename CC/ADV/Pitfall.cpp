@@ -167,3 +167,45 @@ after 1st changed: 99
 after 2nd changed: 99
 
 /**********/
+
+#include <iostream>
+using namespace std;
+void increment(int*& i) {i++;}
+void fake_increment(int* i) {i++;}
+int main() {
+  int* i=0;
+  cout << endl<<"i= "<<i<<endl;
+  fake_increment(i);
+  cout<<endl<<"i= "<<i<<endl;
+  increment(i);
+  cout<<endl<<"i= "<<i<<endl;
+}
+sky@ubuntu:~/test$ ./a.out 
+i= 0
+i= 0
+i= 0x4
+
+/**********/
+
+void RMST::travel_trees() {
+  validate_tree_queue();
+  Node* list = tree_queue_head;
+  while(list) {
+    validate_node(list);
+    process_nodes(list);
+  }
+}
+void RMST::process_nodes(Node*& node) { // Node*&
+  validate_node(node);
+  fork_node(node); 
+}
+void RMST::fork_node(Node*& node) { // Node*&
+  validate_node(node);
+  validate_tree_queue();
+  Node* temp = node;
+  add_queue_node(node);
+  node = node->next;
+  del_queue_node(temp);
+}
+
+/**********/
